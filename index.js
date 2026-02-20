@@ -1,4 +1,4 @@
-// ===== NIEUWE REGELS VOOR WEBSERVER =====
+// ===== WEBSERVER VOOR RENDER =====
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 10000;
@@ -10,18 +10,13 @@ app.get('/', (req, res) => {
 app.listen(port, '0.0.0.0', () => {
   console.log(`🌐 Webserver draait op poort ${port}`);
 });
-// ===== EINDE NIEUWE REGELS =====
+// ===== EINDE WEBSERVER =====
 
-// De rest van je BESTAANDE code blijft hieronder staan
-const { Client, GatewayIntentBits } = require('discord.js');
-require('dotenv').config();
-
-// ... al je andere code ...
-
+// ===== DISCORD BOT CODE =====
 const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config();  // 🟢 Maar 1 keer!
 
 const client = new Client({ 
     intents: [
